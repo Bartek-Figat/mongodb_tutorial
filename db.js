@@ -6,7 +6,9 @@ const ops = {
 };
 
 class DB {
-  constructor(url, ops) {}
+  constructor(url, ops) {
+    this.getConnection(url, ops);
+  }
 
   static async getConnection(url, ops) {
     const client = new MongoClient(url, ops);
