@@ -1,12 +1,5 @@
 node_modules
 .env
 
-aggregationFramework.js
-arrayOperators.js
-arrayOperatorsand SubDocuments.js
-arrayOperatorsandProjection.js
 cart.js
-expressiveQueryOperator.js
-queryOperators.js
-queryOperatorsLogic.js
 test.js

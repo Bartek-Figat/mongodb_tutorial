@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+import { MongoClient, Logger, MongoError } from "mongodb";
 
 const url = "mongodb://127.0.0.1:27017";
 const ops = {
@@ -6,13 +6,8 @@ const ops = {
 };
 
 class DB {
-  constructor(url, ops) {
-    this.getConnection(url, ops);
-  }
-
   static async getConnection(url, ops) {
     const client = new MongoClient(url, ops);
-
     try {
       await client.connect();
       const database = client.db("users");
@@ -24,8 +19,8 @@ class DB {
   }
 }
 
-class Methods {
-  static async insertOneDoc(doc) {
+class Method {
+  static async insertOne(doc) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
       return await collection.insertOne(doc);
@@ -36,10 +31,10 @@ class Methods {
     }
   }
 
-  static async insertManyDoc(doc) {
+  static async insertMany(docs, options) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
-      return await collection.insertMany(doc);
+      return await collection.insertMany(docs, options);
     } catch (e) {
       console.error(`Insert Many Document in collection profile failure: ${e}`);
     } finally {
@@ -47,7 +42,7 @@ class Methods {
     }
   }
 
-  static async findOneDoc(doc) {
+  static async findOne(doc) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
       return await collection.findOne(doc);
@@ -58,7 +53,7 @@ class Methods {
     }
   }
 
-  static async findAllDoc(doc) {
+  static async find(doc) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
       return await collection.find(doc).toArray();
@@ -69,7 +64,33 @@ class Methods {
     }
   }
 
-  static async findOneDocAndUpdate(filter, updateDoc) {
+  static async updateMany(filter, update, options) {
+    const { collection, client } = await DB.getConnection(url, ops);
+    try {
+      return await collection.updateMany(filter, update, options);
+    } catch (e) {
+      console.error(
+        `Find and update Document in collection profile failure: ${e}`
+      );
+    } finally {
+      await client.close();
+    }
+  }
+
+  static async updateOne(filter, update, options) {
+    const { collection, client } = await DB.getConnection(url, ops);
+    try {
+      return await collection.updateOne(filter, update, options);
+    } catch (e) {
+      console.error(
+        `Find and update Document in collection profile failure: ${e}`
+      );
+    } finally {
+      await client.close();
+    }
+  }
+
+  static async findOneAndUpdate(filter, updateDoc) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
       return await collection.findOneAndUpdate(filter, updateDoc);
@@ -82,7 +103,7 @@ class Methods {
     }
   }
 
-  static async deleteOneDoc(query) {
+  static async deleteOne(query) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
       return await collection.deleteOne(query);
@@ -94,6 +115,4 @@ class Methods {
   }
 }
 
-module.exports = {
-  Methods,
-};
+export { Method };

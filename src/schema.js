@@ -1,4 +1,4 @@
-class User {
+export class User {
   static create({ name, age, gender }) {
     return {
       name,
@@ -7,7 +7,3 @@ class User {
     };
   }
 }
-
-module.exports = {
-  User,
-};
