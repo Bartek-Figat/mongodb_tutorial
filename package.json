@@ -9,12 +9,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,jsx,json}": [
-      "./node_modules/.bin/p"
+      "pretty-quick --staged"
     ]
   },
   "author": "",
