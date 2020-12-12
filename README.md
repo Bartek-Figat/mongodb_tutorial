@@ -20,6 +20,19 @@ $ npm run start
 $ npm run git -- "Your custom commit"
 ```
 
+## Requirements
+
+The application can be run locally or in a docker container, the requirements for each setup are listed below.
+
+### Local
+
+- [NodeJS](https://nodejs.org/en/download/)
+
+### Local
+
+- [Mongodb](https://www.mongodb.com/try/download/community)
+- Mongodb msi Package
+
 ### Built With
 
 - [x] node.js
