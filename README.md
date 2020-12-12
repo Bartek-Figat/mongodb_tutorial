@@ -46,3 +46,5 @@ The application can be run locally, the requirements for each setup are listed b
 
 - [x] node.js
 - [x] mongodb
+
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=Bartek-Figat)](https://github.com/anuraghazra/github-readme-stats)
