@@ -22,7 +22,7 @@ $ npm run git -- "Your custom commit"
 
 ## Requirements
 
-The application can be run locally or in a docker container, the requirements for each setup are listed below.
+The application can be run locally, the requirements for each setup are listed below.
 
 ### Local
 
