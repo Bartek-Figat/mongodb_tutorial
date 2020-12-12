@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "start:debug": "nodemon inspect",
+    "git": "git add . && git commit -m",
     "build": "babel src --out-dir build"
   },
   "husky": {
@@ -17,7 +17,8 @@
   "lint-staged": {
     "*.js": [
       "prettier --config .prettierrc --write",
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ]
   },
   "author": "Bartlomiej Figatowski",
