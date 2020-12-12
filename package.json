@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "lint-staged": "pretty-quick --staged"
+      "lint-staged": "lint-staged"
     }
   },
   "lint-staged": {
