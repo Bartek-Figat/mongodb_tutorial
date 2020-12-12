@@ -13,8 +13,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json}": [
-      "pretty-quick --staged"
+    "*.{js,json}": [
+      "prettier"
     ]
   },
   "author": "",
