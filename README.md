@@ -1,5 +1,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/bartek-figat/mongodb_tutorial/badge)](https://www.codefactor.io/repository/github/bartek-figat/mongodb_tutorial)
 
+![](https://visitor-badge.glitch.me/badge?page_id=mongodb_tutorial.Bartek-Figat)
+
 <h1 align="center"> Mongodb Node.js Driver </h1> <br>
 
 ## Installation
