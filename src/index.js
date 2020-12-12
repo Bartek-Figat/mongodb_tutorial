@@ -72,5 +72,3 @@ const updateOne = async () => {
     console.log(e);
   }
 };
-
-updateOne();

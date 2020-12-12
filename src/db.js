@@ -1,4 +1,4 @@
-import { MongoClient, Logger, MongoError } from "mongodb";
+import { MongoClient } from "mongodb";
 
 const url = "mongodb://127.0.0.1:27017";
 const ops = {
@@ -20,10 +20,10 @@ class DB {
 }
 
 class Method {
-  static async insertOne(doc) {
+  static async insertOne(doc, options) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
-      return await collection.insertOne(doc);
+      return await collection.insertOne(doc, options);
     } catch (e) {
       console.error(`Insert One Document in collection profile failure: ${e}`);
     } finally {
@@ -42,10 +42,10 @@ class Method {
     }
   }
 
-  static async findOne(doc) {
+  static async findOne(query, options) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
-      return await collection.findOne(doc);
+      return await collection.findOne(query, options);
     } catch (e) {
       console.error(`Find One Document in collection profile failure: ${e}`);
     } finally {
@@ -53,10 +53,10 @@ class Method {
     }
   }
 
-  static async find(doc) {
+  static async find(query, options) {
     const { collection, client } = await DB.getConnection(url, ops);
     try {
-      return await collection.find(doc).toArray();
+      return await collection.find(query, options).toArray();
     } catch (e) {
       console.error(`Find All Document in collection profile failure: ${e}`);
     } finally {
