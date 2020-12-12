@@ -47,4 +47,4 @@ The application can be run locally, the requirements for each setup are listed b
 - [x] node.js
 - [x] mongodb
 
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=Bartek-Figat&show_icons=true&theme=gotham" alt="Bartek-Figat"
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=Bartek-Figat&show_icons=true&theme=gotham" alt="Bartek-Figat"/>
