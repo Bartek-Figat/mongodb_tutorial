@@ -1,11 +1,11 @@
-import { ObjectID } from "mongodb";
-import { Method } from "./db";
-import { usersDoc } from "./request";
+import { ObjectID } from 'mongodb';
+import { Method } from './db';
+import { usersDoc } from './request';
 
 const findOne = async () => {
   try {
     const query = {
-      _id: ObjectID(""),
+      _id: ObjectID(''),
     };
 
     const res = await Method.findOne(query);
@@ -45,7 +45,7 @@ const insertMany = async () => {
 const updateMany = async () => {
   try {
     const filter = {};
-    const update = { $rename: { shoppingCart: "shopping" } };
+    const update = { $rename: { shoppingCart: 'shopping' } };
 
     const res = await Method.updateMany(filter, update);
     if (res) {
@@ -59,7 +59,7 @@ const updateMany = async () => {
 const updateOne = async () => {
   try {
     const filter = {
-      _id: ObjectID("5fd19e85d43104440806d3d1"),
+      _id: ObjectID('5fd19e85d43104440806d3d1'),
     };
 
     const update = { $inc: { age: 1 } };

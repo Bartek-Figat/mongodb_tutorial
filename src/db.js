@@ -1,6 +1,6 @@
-import { MongoClient } from "mongodb";
+import { MongoClient } from 'mongodb';
 
-const url = "mongodb://127.0.0.1:27017";
+const url = 'mongodb://127.0.0.1:27017';
 const ops = {
   useUnifiedTopology: true,
 };
@@ -10,8 +10,8 @@ class DB {
     const client = new MongoClient(url, ops);
     try {
       await client.connect();
-      const database = client.db("users");
-      const collection = database.collection("profile");
+      const database = client.db('users');
+      const collection = database.collection('profile');
       return { collection, client };
     } catch (e) {
       console.error(e);
@@ -69,9 +69,7 @@ class Method {
     try {
       return await collection.updateMany(filter, update, options);
     } catch (e) {
-      console.error(
-        `Find and update Document in collection profile failure: ${e}`
-      );
+      console.error(`Find and update Document in collection profile failure: ${e}`);
     } finally {
       await client.close();
     }
@@ -82,9 +80,7 @@ class Method {
     try {
       return await collection.updateOne(filter, update, options);
     } catch (e) {
-      console.error(
-        `Find and update Document in collection profile failure: ${e}`
-      );
+      console.error(`Find and update Document in collection profile failure: ${e}`);
     } finally {
       await client.close();
     }
@@ -95,9 +91,7 @@ class Method {
     try {
       return await collection.findOneAndUpdate(filter, updateDoc);
     } catch (e) {
-      console.error(
-        `Find and update Document in collection profile failure: ${e}`
-      );
+      console.error(`Find and update Document in collection profile failure: ${e}`);
     } finally {
       await client.close();
     }
