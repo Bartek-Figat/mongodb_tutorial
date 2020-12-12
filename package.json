@@ -14,7 +14,8 @@
   },
   "lint-staged": {
     "*.{js,json}": [
-      "prettier"
+      "prettier --config .prettierrc --write",
+      "git add"
     ]
   },
   "author": "",

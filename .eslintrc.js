@@ -2,6 +2,7 @@ export default {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: ['eslint:recommended', 'prettier'],
   parserOptions: {
@@ -9,13 +10,13 @@ export default {
     sourceType: 'module',
   },
   rules: {
-    'prettier/prettier': 'error',
     'no-unused-vars': 'warn',
-    'no-console': 'off',
+    'no-console': ['error', { allow: ['warn', 'log'] }],
     'func-names': 'off',
     'no-process-exit': 'off',
     'object-shorthand': 'off',
     'class-methods-use-this': 'off',
+    'prettier/prettier': ['error', { singleQuote: true }],
   },
   plugins: ['prettier'],
 };

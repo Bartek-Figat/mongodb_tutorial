@@ -1,4 +1,4 @@
-export class User {
+class User {
   static create({ name, age, gender }) {
     return {
       name,
@@ -7,3 +7,5 @@ export class User {
     };
   }
 }
+
+export { User };
