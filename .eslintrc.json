@@ -11,12 +11,18 @@
   },
   "rules": {
     "no-unused-vars": "warn",
-    "no-console": ["error", { "allow": ["warn", "log"] }],
+    "no-console": "off",
     "func-names": "off",
     "no-process-exit": "off",
     "object-shorthand": "off",
     "class-methods-use-this": "off",
-    "prettier/prettier": ["error", { "singleQuote": true }]
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "space-before-function-paren": ["error", {
+      "anonymous": "ignore",
+      "named": "ignore",
+      "asyncArrow": "ignore"
+  }],
+  "new-cap": ["warn", { "newIsCap": true }]
   },
   "plugins": ["prettier"]
 }
